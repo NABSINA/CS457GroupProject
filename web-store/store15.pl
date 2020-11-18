@@ -220,11 +220,11 @@ local (*in) = shift if @_;    # CGI input
 @classifyarrayname=("$lang{'Appliances'}", "$lang{'Bath'}", "$lang{'Building Materials'}", 
 "$lang{'Door & Windows'}", "$lang{'Electrical'}",  
 "$lang{'Flooring'}",  "$lang{'Heating & Cooling'}", "$lang{'Kitchen'}", "$lang{'Lighting & Ceiling Fans'}", "$lang{'Lumber & Composites'}", "$lang{'Outdoors'}", "$lang{'Paint'}", "$lang{'Plumbing'}", 
-"$lang{'Storage & Organization'}", "$lang{'Tools'}");
+"$lang{'Storage & Organization'}", "$lang{'Tools'}", "$lang{'New Classification'}");
 
 
 @classifyarray=("appliances", "bath", "buildingmaterials", "doorandwindows", "electrical", "flooring", "heatingandcooling",  "kitchen", "lightingandceilingfans", 
-"lumberandcomposites", "outdoors", "paint", "plumbing", "storageandorganization", "tools");
+"lumberandcomposites", "outdoors", "paint", "plumbing", "storageandorganization", "tools", "newclassification");
 
 $defaultclassifyarrayname="$lang{'Appliances'}";
 $defaultclassifyarray="appliances";
@@ -347,6 +347,8 @@ $defaultclassifyarray="appliances";
 "rotarytoolsandoscillatingtools", "routersandrouterbits", "sandersandsandpaper",
 "toolbatteriesandchargers", "weldingandcutting"],
 
+        "newclassification"  => ["newcategory1", "newcategory2", "newcategory3"],
+
 );
 
 %defaultcategoryarray=(
@@ -365,7 +367,7 @@ $defaultclassifyarray="appliances";
                        "plumbing"  => ["waterheaters"],
                        "storageandorganization"  => ["closetstorage"],
                        "tools"  => ["airtoolsandcompressors"],
-                        
+                        "newclassification"  => ["newcategory1"],
 );
 
 %categoryarrayname=("appliances" => ["$lang{'Appliances Parts & Accessories'}", 
@@ -486,6 +488,8 @@ $defaultclassifyarray="appliances";
 "$lang{'Rotary Tools & Oscillating Tools'}", "$lang{'Routers & Router Bits'}", "$lang{'Sanders & Sand Paper'}",
 "$lang{'Tool Batteries & Chargers'}", "$lang{'Welding & Cutting'}"],
 
+        "newclassification"  => ["$lang{'newcategory1'}", "$lang{'newcategory2'}", "$lang{'newcategory3'}"],
+
 );
 
 %categoryarrayattri=("appliances" => {"appliancespartsandaccessories" => [],
@@ -604,6 +608,8 @@ $defaultclassifyarray="appliances";
         "tools"  => {"airtoolsandcompressors"=>[], "drillanddrillbits"=>[], "greaseguns"=>[], "grindersandpolishers"=>[], "handtools"=>[], "joinersandplaners"=>[], "measuringtools"=>[], "nailersandstaplers"=>[], "powersawsandsawblades"=>[], "pressesandlathes"=>[], 
 "rotarytoolsandoscillatingtools"=>[], "routersandrouterbits"=>[], "sandersandsandpaper"=>[],
 "toolbatteriesandchargers"=>[], "weldingandcutting"=>[]},
+
+        "newclassification"  => {"newcategory1"=>["_attribute_n1_1", "_attribute_n1_2"], "newcategory2"=>[], "newcategory3"=>[]},
 
 );
 
@@ -724,6 +730,8 @@ $defaultclassifyarray="appliances";
         "tools"  => {"airtoolsandcompressors"=>[], "drillanddrillbits"=>[], "greaseguns"=>[], "grindersandpolishers"=>[], "handtools"=>[], "joinersandplaners"=>[], "measuringtools"=>[], "nailersandstaplers"=>[], "powersawsandsawblades"=>[], "pressesandlathes"=>[], 
 "rotarytoolsandoscillatingtools"=>[], "routersandrouterbits"=>[], "sandersandsandpaper"=>[],
 "toolbatteriesandchargers"=>[], "weldingandcutting"=>[]},
+
+        "newclassification"  => {"newcategory1"=>["$lang{'Attribute n1 1'}|15|&nbsp;&nbsp;", "$lang{'Attribute n1 2'}|15|<br><br>"], "newcategory2"=>[], "newcategory3"=>[]},
 
 );
 
