@@ -56,7 +56,7 @@ function btnSearch(searchTerm) {
             return info;
         }))).then(items => {
             console.log(items);
-            console.log(JSON.stringify(items, null, 4));
+            console.log(JSON.stringify(items));
         });
     });
 }
