@@ -8,7 +8,12 @@ const proxy = 'http://pi.nathangawith.com:575/';
 searchBtn.addEventListener('click', () => btnSearch(searchTxt.value));
 
 function getURL(url, isJSON) {
-    return fetch(url).then(x => isJSON ? x.json() : x.text());
+    return fetch(url, {
+        method: 'GET',
+        headers: {
+            'Authorization': 'Bearer ',
+        },
+    }).then(x => isJSON ? x.json() : x.text());
 }
 
 
