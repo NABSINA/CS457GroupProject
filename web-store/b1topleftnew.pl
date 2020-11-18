@@ -129,6 +129,8 @@ if($input{'user'} eq "staff") # Staff maintaining.
 
   print<<ENDOFTEXT;
 <meta charset=utf-8>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style type="text/css">
        #nav_menu1 div { position: relative; }
        #nav_menu1 ul { list-style-type: none;
@@ -307,13 +309,14 @@ $_[6]
 
     <div class="shop fixed">
     <table><tr><td>
-        <table width=2200 height=90 border=0 cellspacing=0 cellpadding=0 bgcolor=blue>
+        <table width=2200 height=90 border=0 cellspacing=0 cellpadding=0 bgcolor="#AAAAAA">
 	<tr><td width=10></td><td width=160>
                        <nav id="nav_menu">
 
 			<ul>
-			   <li><img width=40 height=40 
-       src="$opimageprefix/allcity/allshop/common/menu.jpg">
+			   <li>
+               <span class="material-icons" style="font-size:40px;">menu</span>
+               <!--<img width=40 height=40 src="$opimageprefix/allcity/allshop/common/menu.jpg">-->
 			   <ul><br>
 				   <li>
 ENDOFTEXT
@@ -430,7 +433,7 @@ print<<ENDOFTEXT;
 			   </li>
 		        </ul>
                   </nav>			
-	  </td><td width=300>
+	  </td><!--<td width=300>-->
 ENDOFTEXT
 
     if($_[0] eq "b1search.pl")
@@ -515,7 +518,7 @@ ENDOFTEXT
 
     print <<ENDOFTEXT;
 </td>
-<td width=500 height=90 background="$opimageprefix/allcity/allshop/common/search.jpg" style="background-size: cover">
+<td width=500>
             <table>
                  <tr><td width=55></td>
                      <td align=left width=300>
@@ -530,15 +533,29 @@ ENDOFTEXT
                     }
 		}
 		print <<ENDOFTEXT;
-                         <tr height=25 valign=bottom><td><div id=categorydisplay> &nbsp; <font size=2>$categorydisplay</font> </div>            </td></tr>
-		         <tr valign=bottom><td><input name=search value="$input{'search'}" size=45>      </td></tr>
+                         <tr height=25 valign=bottom><td>
+                         <div id=categorydisplay style="color:white;">
+                            &nbsp;
+                            <font size=2>
+                                $categorydisplay
+                            </font>
+                         </div>            </td></tr>
+		         <tr valign=bottom><td>
+                 <div class="row">
+    <input class="col-8" name=search value="$input{'search'}" placeholder="Search . . ." aria-label="Search">
+    <button class="col-4 btn btn-outline-success my-2 my-sm-0" type="button" onClick="window.location.href='b1search.pl?country='+document.$_[7].country.value+'&city='+document.$_[7].city.value+'&shop='+document.$_[7].shop.value+'&user='+document.$_[7].user.value+'&dllogin='+document.$_[7].dllogin.value+'&dlpasswordenc='+document.$_[7].dlpasswordenc.value+'&classify='+document.$_[7].classify.value+'&category='+document.$_[7].category.value+'&cart='+document.$_[7].cart.value+'&language='+document.$_[7].language.value+'&topleft='+document.$_[7].topleft.value+'&page=1&sortby=postdate&sortorder=descend&browser='+document.$_[7].browser.value+'&browsere='+document.$_[7].browsere.value">
+        <span class="material-icons">search</span>
+        <span>$lang{'Search'}</span>
+    </button>
+  </div>
+</td></tr>
                 </table></td>
                      <td>
                 <table>
                      <tr><td>
 		     <nav id="nav_menu1">
-		       <div>
-		        <font size=2>Category</font>
+		       <div class="mx-4">
+		        <font color=white size=2><span class="material-icons">category</span>&nbsp;Category</font>
                         <ul>
 ENDOFTEXT
 
@@ -601,8 +618,6 @@ ENDOFTEXT
 #	  <input type="button" value="$lang{'Search'}" onClick="window.location.href='b1search.pl?country='+document.$_[7].country.value+'&city='+document.$_[7].city.value+'&shop='+document.$_[7].shop.value+'&user='+document.$_[7].user.value+'&dllogin='+document.$_[7].dllogin.value+'&dlpasswordenc='+document.$_[7].dlpasswordenc.value+'&classify='+document.$_[7].classify.value+'&category='+document.$_[7].category.value+'&cart='+document.$_[7].cart.value+'&language='+document.$_[7].language.value+'&topleft='+document.$_[7].topleft.value+'&page='+document.$_[7].page.value+'&sortby='+document.$_[7].sortby.value+'&sortorder='+document.$_[7].sortorder.value+'&browser='+document.$_[7].browser.value+'&browsere='+document.$_[7].browsere.value">
          
 	  print <<ENDOFTEXT;
-<input type="button" value="$lang{'Search'}" onClick="window.location.href='b1search.pl?country='+document.$_[7].country.value+'&city='+document.$_[7].city.value+'&shop='+document.$_[7].shop.value+'&user='+document.$_[7].user.value+'&dllogin='+document.$_[7].dllogin.value+'&dlpasswordenc='+document.$_[7].dlpasswordenc.value+'&classify='+document.$_[7].classify.value+'&category='+document.$_[7].category.value+'&cart='+document.$_[7].cart.value+'&language='+document.$_[7].language.value+'&topleft='+document.$_[7].topleft.value+'&page=1&sortby=postdate&sortorder=descend&browser='+document.$_[7].browser.value+'&browsere='+document.$_[7].browsere.value">
-
 	  </td></tr>
                 </table>
 		     </td></tr>
@@ -612,13 +627,13 @@ ENDOFTEXT
 	  if($input{'user'} ne "staff")
 	  {
 		  print <<ENDOFTEXT;
-&nbsp; &nbsp;<font color=white> $lang{'Access:'}</font> <br>&nbsp; &nbsp;<input name=access size=5> <br>&nbsp; &nbsp;<input type=button value="$lang{'Find item'}" onClick="window.location.href='b1access.pl?country=$input{'country'}&city=$input{'city'}&shop=$input{'shop'}&language=$input{'language'}&browser=$input{'browser'}&browsere=$input{'browsere'}&access='+document.$_[7].access.value">
+&nbsp; &nbsp;<font color=white> $lang{'Access:'}</font> <br>&nbsp; &nbsp;<input name=access size=5> <br>&nbsp; &nbsp;<button type=button class="btn btn-outline-dark" onClick="window.location.href='b1access.pl?country=$input{'country'}&city=$input{'city'}&shop=$input{'shop'}&language=$input{'language'}&browser=$input{'browser'}&browsere=$input{'browsere'}&access='+document.$_[7].access.value"><span class="material-icons">trending_flat</span>&nbsp;$lang{'Find item'}</button>
 ENDOFTEXT
           }
 	  elsif($input{'user'} eq "staff")
 	  {
 		  print <<ENDOFTEXT;
-&nbsp; &nbsp;<font color=white> $lang{'Access:'}</font> <br>&nbsp; &nbsp;<input name=access size=5> <br>&nbsp; &nbsp;<input type=button value="$lang{'Find item'}" onClick="window.location.href='b1access.pl?country=$input{'country'}&city=$input{'city'}&shop=$input{'shop'}&user=$input{'user'}&language=$input{'language'}&dllogin=$input{'dllogin'}&dlpasswordenc=$dlpasswordenc&browser=$input{'browser'}&browsere=$input{'browsere'}&access='+document.$_[7].access.value">
+&nbsp; &nbsp;<font color=white> $lang{'Access:'}</font> <br>&nbsp; &nbsp;<input name=access size=5> <br>&nbsp; &nbsp;<button type=button class="btn btn-outline-dark" onClick="window.location.href='b1access.pl?country=$input{'country'}&city=$input{'city'}&shop=$input{'shop'}&user=$input{'user'}&language=$input{'language'}&dllogin=$input{'dllogin'}&dlpasswordenc=$dlpasswordenc&browser=$input{'browser'}&browsere=$input{'browsere'}&access='+document.$_[7].access.value"><span class="material-icons">trending_flat</span>&nbsp;$lang{'Find item'}</button>
 ENDOFTEXT
           }
 
@@ -629,7 +644,11 @@ ENDOFTEXT
 	  if($input{'user'} ne "staff")
 	  {
 		  print <<ENDOFTEXT;
-<input type="button"  value="$lang{'Shopping Cart'}" onClick="window.location.href='b1cart.pl?country=$input{'country'}&city=$input{'city'}&shop=$input{'shop'}&language=$input{'language'}&browser=$input{'browser'}&browsere=$input{'browsere'}&cart='+document.$_[7].cart.value">
+          
+<button type="button" class="btn btn-outline-dark" onClick="window.location.href='b1cart.pl?country=$input{'country'}&city=$input{'city'}&shop=$input{'shop'}&language=$input{'language'}&browser=$input{'browser'}&browsere=$input{'browsere'}&cart='+document.$_[7].cart.value">
+    <span class="material-icons">shopping_cart</span>
+    <span>$lang{'Shopping Cart'}</span>
+</botton>
 ENDOFTEXT
           }
  
