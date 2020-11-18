@@ -1172,177 +1172,183 @@ An email has been sent to us. Please wait for response.#An email has been sent t
 
 sub customize {
 $langindexkey=
-"Kansas City#Kansas City#
-Appliances#Appliances#
-Bath#Bath#
-Building Materials#Building Materials#
-Decor#Decor#
-Door & Windows#Door & Windows#
-Electrical#Electrical#
-Flooring#Flooring#
-Heating & Cooling#Heating & Cooling#
-Kitchen#Kitchen#
-Lighting & Ceiling Fans#Lighting & Ceiling Fans#
-Lumber & Composites#Lumber & Composites#
-Outdoors#Outdoors#
-Paint#Paint#
-Plumbing#Plumbing#
-Storage & Organization#Storage & Organization#
-Tools#Tools#
-Appliances Parts & Accessories#Appliances Parts & Accessories#
-Dishwashers#Dishwashers#
-Freezers#Freezers#
-Garbage Disposals#Garbage Disposals#
-Microwaves#Microwaves#
-Range Hoods#Range Hoods#
-Ranges#Ranges#
-Small Appliances#Small Appliances#
-Vacuums#Vacuums#
-Ovens#Ovens#
-Washers & Dryers#Washers & Dryers#
-Water Coolers#Water Coolers#
-Bathroom Cabinets#Bathroom Cabinets#
-Bathroom Fans#Bathroom Fans#
-Faucets#Faucets#
-Mirrors#Mirrors#
-Sinks#Sinks#
-Bathtubs#Bathtubs#
-Showers & Shower Accessories#Showers & Shower Accessories#
-Toilets & Toilet Seats#Toilets & Toilet Seats#
-Ceilings#Ceilings#
-Concrete Cement & Masonry#Concrete Cement & Masonry#
-Decking#Decking#
-Drywall#Drywall#
-Fireplace Accessories#Fireplace Accessories#
-Glass & Acrylic#Glass & Acrylic#
-Insulation & Accessories#Insulation & Accessories#
-Ladders#Ladders#
-Lumber#Lumber#
-Moulding & Wallpanels#Moulding & Wallpanels#
-Roofing & Gutters#Roofing & Gutters#
-Siding & Stone Veneer#Siding & Stone Veneer#
-Stairs & Ailings#Stairs & Ailings#
-Ventilation#Ventilation#
-Awnings & Accessories#Awnings & Accessories#
-Doors#Doors#
-Exterior Shutters & Accessories#Exterior Shutters & Accessories#
-Garage Doors & Openers#Garage Doors & Openers#
-Windows#Windows#
-Batteries#Batteries#
-Cable & Wire Connectors#Cable & Wire Connectors#
-Circuit Breakers#Circuit Breakers#
-Conduit & Conduit Fittings#Conduit & Conduit Fittings#
-Dimmers & Switches#Dimmers & Switches#
-Door Bells#Door Bells#
-Electrical Boxes & Covers#Electrical Boxes & Covers#
-Electrical Outles & Adapters#Electrical Outles & Adapters#
-Electrical Tools#Electrical Tools#
-Extension Cords#Extension Cords#
-Generators#Generators#
-Light Sockets#Light Sockets#
-Wall Plates#Wall Plates#
-Carpet#Carpet#
-Floor Moulding#Floor Moulding#
-Flooring Tools#Flooring Tools#
-Hardwood Flooring#Hardwood Flooring#
-Rugs#Rugs#
-Tile & Stone#Tile & Stone#
-Vinyl Flooring#Vinyl Flooring#
-Air Conditioners#Air Conditioners#
-Air Filters#Air Filters#
-Air Purifiers#Air Purifiers#
-Attic Ventilation#Attic Ventilation#
-Fireplaces#Fireplaces#
-Heaters#Heaters#
-Humidifiers & Dehumidifiers#Humidifiers & Dehumidifiers#
-Thermostats#Thermostats#
-Kitchen Faucets#Kitchen Faucets#
-Kitchen Sinks#Kitchen Sinks#
-Kitchen Cabinets#Kitchen Cabinets#
-Kitchen Countertops#Kitchen Countertops#
-Kitchen Wall Tiles#Kitchen Wall Tiles#
-Bathroom Lighting#Bathroom Lighting#
-Ceiling Fans#Ceiling Fans#
-Ceiling Lights#Ceiling Lights#
-Chandeliers & Pendant Lighting#Chandeliers & Pendant Lighting#
-Kitchen Lighting#Kitchen Lighting#
-Lamps & Lamp Shades#Lamps & Lamp Shades#
-Landscape Lighting#Landscape Lighting#
-Lighting Bulbs#Lighting Bulbs#
-Timers#Timers#
-Boards#Boards#
-Decking#Decking#
-Fencing#Fencing#
-Paneling#Paneling#
-Plywood & Sheathing#Plywood & Sheathing#
-Shims & Wood Shingles#Shims & Wood Shingles#
-Timber#Timber#
-Animal & Pet Care#Animal & Pet Care#
-Bird Care#Bird Care#
-Grills#Grills#
-Hot Tubs#Hot Tubs#
-Patio Furniture#Patio Furniture#
-Play Sets & Swing Sets#Play Sets & Swing Sets#
-Pools#Pools#
-Caulking#Caulking#
-Cleaners#Cleaners#
-Drop Cloths & Sheeting#Drop Cloths & Sheeting#
-Glues & Tapes#Glues & Tapes#
-Paint & Primer#Paint & Primer#
-Paint Brushes, Rollers & Kits#Paint Brushes, Rollers & Kits#
-Paint Cleanup#Paint Cleanup#
-Paint Sprayers#Paint Sprayers#
-Patching#Patching#
-Sanding#Sanding#
-Scrapers, Blades & Tools#Scrapers, Blades & Tools#
-Stains & Sealers#Stains & Sealers#
-Thinners & Removers#Thinners & Removers#
-Augers, Plungers, Drain Openers#Augers, Plungers, Drain Openers#
-Laudry Tubs & Faucets#Laudry Tubs & Faucets#
-Pipes#Pipes#
-Laudry Tubs & Faucets#Laudry Tubs & Faucets#
-Plumbing Tools#Plumbing Tools#
-Pumps & Tanks#Pumps & Tanks#
-Valves#Valves#
-Water Filtration & Water Softners#Water Filtration & Water Softners#
-Water Heaters#Water Heaters#
-Closet Storage#Closet Storage#
-Folding Tables & Chairs#Folding Tables & Chairs#
-Garage Storage#Garage Storage#
-Hooks & Racks#Hooks & Racks#
-Laudry Storage#Laudry Storage#
-Moving Boxes & Supplies#Moving Boxes & Supplies#
-Office Storage#Office Storage#
-Shelves#Shelves#
-Storage Totes & Baskets#Storage Totes & Baskets#
-Air Tools & Compressors#Air Tools & Compressors#
-Drill & Drill Bits#Drill & Drill Bits#
-Grease Guns#Grease Guns#
-Grinders & Polishers#Grinders & Polishers#
-Hand Tools#Hand Tools#
-Joiners & Planers#Joiners & Planers#
-Measuring Tools#Measuring Tools#
-Nailers & Staplers#Nailers & Staplers#
-Power Saws & Saw Blades#Power Saws & Saw Blades#
-Presses & Lathes#Presses & Lathes#
-Rotary Tools & Oscillating Tools#Rotary Tools & Oscillating Tools#
-Routers & Router Bits#Routers & Router Bits#
-Sanders & Sand Paper#Sanders & Sand Paper#
-Tool Batteries & Chargers#Tool Batteries & Chargers#
-Welding & Cutting#Welding & Cutting#
-Production Place:#Production Place:#
-Production Date:#Production Date:#
-Expiration Date:#Expiration Date:#
-One Week#One Week#
-Two Weeks#Two Weeks#
-One Month#One Month#
-Two Months#Two Months#
-Three Months#Three Months#
-Six Months#Six Months#
-One Year#One Year#
-Two Years#Two Years#
-Three Years#Three Years#
-Nonexpire#Nonexpire#
+"Kansas City#Kansas City translated#
+Appliances#Appliances translated#
+Bath#Bath translated#
+Building Materials#Building Materials translated#
+Decor#Decor translated#
+Door & Windows#Door & Windows translated#
+Electrical#Electrical translated#
+Flooring#Flooring translated#
+Heating & Cooling#Heating & Cooling translated#
+Kitchen#Kitchen translated#
+Lighting & Ceiling Fans#Lighting & Ceiling Fans translated#
+Lumber & Composites#Lumber & Composites translated#
+Outdoors#Outdoors translated#
+Paint#Paint translated#
+Plumbing#Plumbing translated#
+Storage & Organization#Storage & Organization translated#
+Tools#Tools translated#
+Appliances Parts & Accessories#Appliances Parts & Accessories translated#
+Dishwashers#Dishwashers translated#
+Freezers#Freezers translated#
+Garbage Disposals#Garbage Disposals translated#
+Microwaves#Microwaves translated#
+Range Hoods#Range Hoods translated#
+Ranges#Ranges translated#
+Small Appliances#Small Appliances translated#
+Vacuums#Vacuums translated#
+Ovens#Ovens translated#
+Washers & Dryers#Washers & Dryers translated#
+Water Coolers#Water Coolers translated#
+Bathroom Cabinets#Bathroom Cabinets translated#
+Bathroom Fans#Bathroom Fans translated#
+Faucets#Faucets translated#
+Mirrors#Mirrors translated#
+Sinks#Sinks translated#
+Bathtubs#Bathtubs translated#
+Showers & Shower Accessories#Showers & Shower Accessories translated#
+Toilets & Toilet Seats#Toilets & Toilet Seats translated#
+Ceilings#Ceilings translated#
+Concrete Cement & Masonry#Concrete Cement & Masonry translated#
+Decking#Decking translated#
+Drywall#Drywall translated#
+Fireplace Accessories#Fireplace Accessories translated#
+Glass & Acrylic#Glass & Acrylic translated#
+Insulation & Accessories#Insulation & Accessories translated#
+Ladders#Ladders translated#
+Lumber#Lumber translated#
+Moulding & Wallpanels#Moulding & Wallpanels translated#
+Roofing & Gutters#Roofing & Gutters translated#
+Siding & Stone Veneer#Siding & Stone Veneer translated#
+Stairs & Ailings#Stairs & Ailings translated#
+Ventilation#Ventilation translated#
+Awnings & Accessories#Awnings & Accessories translated#
+Doors#Doors translated#
+Exterior Shutters & Accessories#Exterior Shutters & Accessories translated#
+Garage Doors & Openers#Garage Doors & Openers translated#
+Windows#Windows translated#
+Batteries#Batteries translated#
+Cable & Wire Connectors#Cable & Wire Connectors translated#
+Circuit Breakers#Circuit Breakers translated#
+Conduit & Conduit Fittings#Conduit & Conduit Fittings translated#
+Dimmers & Switches#Dimmers & Switches translated#
+Door Bells#Door Bells translated#
+Electrical Boxes & Covers#Electrical Boxes & Covers translated#
+Electrical Outles & Adapters#Electrical Outles & Adapters translated#
+Electrical Tools#Electrical Tools translated#
+Extension Cords#Extension Cords translated#
+Generators#Generators translated#
+Light Sockets#Light Sockets translated#
+Wall Plates#Wall Plates translated#
+Carpet#Carpet translated#
+Floor Moulding#Floor Moulding translated#
+Flooring Tools#Flooring Tools translated#
+Hardwood Flooring#Hardwood Flooring translated#
+Rugs#Rugs translated#
+Tile & Stone#Tile & Stone translated#
+Vinyl Flooring#Vinyl Flooring translated#
+Air Conditioners#Air Conditioners translated#
+Air Filters#Air Filters translated#
+Air Purifiers#Air Purifiers translated#
+Attic Ventilation#Attic Ventilation translated#
+Fireplaces#Fireplaces translated#
+Heaters#Heaters translated#
+Humidifiers & Dehumidifiers#Humidifiers & Dehumidifiers translated#
+Thermostats#Thermostats translated#
+Kitchen Faucets#Kitchen Faucets translated#
+Kitchen Sinks#Kitchen Sinks translated#
+Kitchen Cabinets#Kitchen Cabinets translated#
+Kitchen Countertops#Kitchen Countertops translated#
+Kitchen Wall Tiles#Kitchen Wall Tiles translated#
+Bathroom Lighting#Bathroom Lighting translated#
+Ceiling Fans#Ceiling Fans translated#
+Ceiling Lights#Ceiling Lights translated#
+Chandeliers & Pendant Lighting#Chandeliers & Pendant Lighting translated#
+Kitchen Lighting#Kitchen Lighting translated#
+Lamps & Lamp Shades#Lamps & Lamp Shades translated#
+Landscape Lighting#Landscape Lighting translated#
+Lighting Bulbs#Lighting Bulbs translated#
+Timers#Timers translated#
+Boards#Boards translated#
+Decking#Decking translated#
+Fencing#Fencing translated#
+Paneling#Paneling translated#
+Plywood & Sheathing#Plywood & Sheathing translated#
+Shims & Wood Shingles#Shims & Wood Shingles translated#
+Timber#Timber translated#
+Animal & Pet Care#Animal & Pet Care translated#
+Bird Care#Bird Care translated#
+Grills#Grills translated#
+Hot Tubs#Hot Tubs translated#
+Patio Furniture#Patio Furniture translated#
+Play Sets & Swing Sets#Play Sets & Swing Sets translated#
+Pools#Pools translated#
+Caulking#Caulking translated#
+Cleaners#Cleaners translated#
+Drop Cloths & Sheeting#Drop Cloths & Sheeting translated#
+Glues & Tapes#Glues & Tapes translated#
+Paint & Primer#Paint & Primer translated#
+Paint Brushes, Rollers & Kits#Paint Brushes, Rollers & Kits translated#
+Paint Cleanup#Paint Cleanup translated#
+Paint Sprayers#Paint Sprayers translated#
+Patching#Patching translated#
+Sanding#Sanding translated#
+Scrapers, Blades & Tools#Scrapers, Blades & Tools translated#
+Stains & Sealers#Stains & Sealers translated#
+Thinners & Removers#Thinners & Removers translated#
+Augers, Plungers, Drain Openers#Augers, Plungers, Drain Openers translated#
+Laudry Tubs & Faucets#Laudry Tubs & Faucets translated#
+Pipes#Pipes translated#
+Laudry Tubs & Faucets#Laudry Tubs & Faucets translated#
+Plumbing Tools#Plumbing Tools translated#
+Pumps & Tanks#Pumps & Tanks translated#
+Valves#Valves translated#
+Water Filtration & Water Softners#Water Filtration & Water Softners translated#
+Water Heaters#Water Heaters translated#
+Closet Storage#Closet Storage translated#
+Folding Tables & Chairs#Folding Tables & Chairs translated#
+Garage Storage#Garage Storage translated#
+Hooks & Racks#Hooks & Racks translated#
+Laudry Storage#Laudry Storage translated#
+Moving Boxes & Supplies#Moving Boxes & Supplies translated#
+Office Storage#Office Storage translated#
+Shelves#Shelves translated#
+Storage Totes & Baskets#Storage Totes & Baskets translated#
+Air Tools & Compressors#Air Tools & Compressors translated#
+Drill & Drill Bits#Drill & Drill Bits translated#
+Grease Guns#Grease Guns translated#
+Grinders & Polishers#Grinders & Polishers translated#
+Hand Tools#Hand Tools translated#
+Joiners & Planers#Joiners & Planers translated#
+Measuring Tools#Measuring Tools translated#
+Nailers & Staplers#Nailers & Staplers translated#
+Power Saws & Saw Blades#Power Saws & Saw Blades translated#
+Presses & Lathes#Presses & Lathes translated#
+Rotary Tools & Oscillating Tools#Rotary Tools & Oscillating Tools translated#
+Routers & Router Bits#Routers & Router Bits translated#
+Sanders & Sand Paper#Sanders & Sand Paper translated#
+Tool Batteries & Chargers#Tool Batteries & Chargers translated#
+Welding & Cutting#Welding & Cutting translated#
+Production Place:#Production Place: translated#
+Production Date:#Production Date: translated#
+Expiration Date:#Expiration Date: translated#
+One Week#One Week translated#
+Two Weeks#Two Weeks translated#
+One Month#One Month translated#
+Two Months#Two Months translated#
+Three Months#Three Months translated#
+Six Months#Six Months translated#
+One Year#One Year translated#
+Two Years#Two Years translated#
+Three Years#Three Years translated#
+Nonexpire#Nonexpire translated#
+New Classification#New Classification translated#
+newcategory1#new category 1 translated#
+newcategory2#new category 2 translated#
+newcategory3#new category 3 translated#
+Attribute n1 1#Attribute n1 1 translated#
+Attribute n1 2#Attribute n1 2 translated#
 ";
 
 }
