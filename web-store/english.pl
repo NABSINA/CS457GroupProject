@@ -1343,6 +1343,28 @@ One Year#One Year#
 Two Years#Two Years#
 Three Years#Three Years#
 Nonexpire#Nonexpire#
+peripherals#Peripherals#
+accessories#Accessories#
+hardware#Hardware#
+devices#Devices#
+mice#Mice#
+keyboards#Keyboards#
+speakers#Speakers#
+headphones#Headphones#
+adapters#Adapters#
+chargers#Chargers#
+cables#Cables#
+mousepads#Mousepads#
+powerstrips#Power Strips#
+graphicscards#Graphics Cards#
+powersupplies#Power Supplies#
+memory#Memory#
+CPUs#CPUs#
+motherboards#Mother Boards#
+laptops#Laptops#
+phones#Phones#
+monitors#Monitors#
+routers#Routers#
 ";
 
 }

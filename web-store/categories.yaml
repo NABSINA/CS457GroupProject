@@ -1,0 +1,27 @@
+
+peripherals:
+  - mice
+  - keyboards
+  - speakers
+  - headphones
+
+accessories:
+  - adapters
+  - chargers
+  - cables
+  - mousepads
+  - power strips
+
+hardware:
+  - graphics cards
+  - power supplies
+  - memory
+  - CPUs
+  - mother boards
+
+
+devices:
+  - laptops
+  - phones
+  - monitors
+  - routers
