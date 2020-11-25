@@ -485,10 +485,12 @@ print<<ENDOFTEXT;
                   </nav>
 ENDOFTEXT
 
-    if($_[0] eq "b1search.pl")
-    {
+    # if($_[0] eq "b1search.pl")
+    # {
 print <<ENDOFTEXT;    
 <div class="col-5">
+    <div class="row">
+        <div class="col-12">
             <font color=white size=3> $lang{'Sort by:'}</font>
 
 
@@ -559,6 +561,37 @@ print <<ENDOFTEXT;
 </select>
 <input type="button" onClick="Unselect()" value="$lang{'Unselect'}">
 </div>
+ENDOFTEXT
+
+                for($i=0; $i<=$#{$categoryarray{"$input{'classify'}"}}; $i++)
+		{
+		    if($input{'category'} eq $categoryarray{"$input{'classify'}"}[$i])
+	            {
+		         $categorydisplay=$categoryarrayname{"$input{'classify'}"}[$i];	    
+                    }
+		}
+		print <<ENDOFTEXT;
+        <div class="col-12">
+                 <div class="row pb-4">
+    <div class="col-12" id=categorydisplay style="color:white;">
+        &nbsp;
+        <font size=2>
+            $categorydisplay
+        </font>
+    </div>
+    <input class="col-8" name=search value="$input{'search'}" placeholder="Search . . ." aria-label="Search">
+    <button class="col-4 btn btn-outline-success my-2 my-sm-0" type="button" onClick="window.location.href='b1search.pl?country='+document.$_[7].country.value+'&city='+document.$_[7].city.value+'&shop='+document.$_[7].shop.value+'&user='+document.$_[7].user.value+'&dllogin='+document.$_[7].dllogin.value+'&dlpasswordenc='+document.$_[7].dlpasswordenc.value+'&classify='+document.$_[7].classify.value+'&category='+document.$_[7].category.value+'&cart='+document.$_[7].cart.value+'&language='+document.$_[7].language.value+'&topleft='+document.$_[7].topleft.value+'&page=1&sortby=postdate&sortorder=descend&browser='+document.$_[7].browser.value+'&browsere='+document.$_[7].browsere.value">
+        <span class="material-icons">search</span>
+        <span>$lang{'Search'}</span>
+    </button>
+  </div>
+  </div>
+            <!--SEARCH-->
+        </div>
+    </div>
+ENDOFTEXT
+
+print <<ENDOFTEXT;
   <div class="col-3">
 		     <nav id="nav_menu1" style="z=index:100">
 		       <div class="mx-4">
@@ -622,7 +655,9 @@ ENDOFTEXT
 ENDOFTEXT
 
 print <<ENDOFTEXT;
-     <div class="col-3">
+<div class="col-3">
+<div class="row">
+  <div class="col-12">
 ENDOFTEXT
 
 	  if($input{'user'} ne "staff")
@@ -638,38 +673,15 @@ ENDOFTEXT
  
      print <<ENDOFTEXT;
      </div>
-<div class="col-2">&nbsp;</div>
 ENDOFTEXT
 
-    }
+    # }
 
-                for($i=0; $i<=$#{$categoryarray{"$input{'classify'}"}}; $i++)
-		{
-		    if($input{'category'} eq $categoryarray{"$input{'classify'}"}[$i])
-	            {
-		         $categorydisplay=$categoryarrayname{"$input{'classify'}"}[$i];	    
-                    }
-		}
-		print <<ENDOFTEXT;
-                         <div class="col-4">
-                 <div class="row pb-4">
-    <div class="col-12" id=categorydisplay style="color:white;">
-        &nbsp;
-        <font size=2>
-            $categorydisplay
-        </font>
-    </div>
-    <input class="col-8" name=search value="$input{'search'}" placeholder="Search . . ." aria-label="Search">
-    <button class="col-4 btn btn-outline-success my-2 my-sm-0" type="button" onClick="window.location.href='b1search.pl?country='+document.$_[7].country.value+'&city='+document.$_[7].city.value+'&shop='+document.$_[7].shop.value+'&user='+document.$_[7].user.value+'&dllogin='+document.$_[7].dllogin.value+'&dlpasswordenc='+document.$_[7].dlpasswordenc.value+'&classify='+document.$_[7].classify.value+'&category='+document.$_[7].category.value+'&cart='+document.$_[7].cart.value+'&language='+document.$_[7].language.value+'&topleft='+document.$_[7].topleft.value+'&page=1&sortby=postdate&sortorder=descend&browser='+document.$_[7].browser.value+'&browsere='+document.$_[7].browsere.value">
-        <span class="material-icons">search</span>
-        <span>$lang{'Search'}</span>
-    </button>
-  </div>
-  </div>
+     print <<ENDOFTEXT;
 ENDOFTEXT
 
     print<<ENDOFTEXT;
-                      <div class="col-3"></div><div class="col-3">
+  <div class="col-12">
 ENDOFTEXT
 	  
 #	  <input type="button" value="$lang{'Search'}" onClick="window.location.href='b1search.pl?country='+document.$_[7].country.value+'&city='+document.$_[7].city.value+'&shop='+document.$_[7].shop.value+'&user='+document.$_[7].user.value+'&dllogin='+document.$_[7].dllogin.value+'&dlpasswordenc='+document.$_[7].dlpasswordenc.value+'&classify='+document.$_[7].classify.value+'&category='+document.$_[7].category.value+'&cart='+document.$_[7].cart.value+'&language='+document.$_[7].language.value+'&topleft='+document.$_[7].topleft.value+'&page='+document.$_[7].page.value+'&sortby='+document.$_[7].sortby.value+'&sortorder='+document.$_[7].sortorder.value+'&browser='+document.$_[7].browser.value+'&browsere='+document.$_[7].browsere.value">
@@ -688,11 +700,13 @@ ENDOFTEXT
           }
 
 	 print<<ENDOFTEXT;
-     </div>
+  </div>
+</div>
 ENDOFTEXT
      print <<ENDOFTEXT;
         <div width=2200 bgcolor=#c4ff0e border=0 cellspacing=0 cellsep=0>
 <div id=ClassifyCategory></div></div>
+        </div>
         </div>
         </div>
     <!--</div>
