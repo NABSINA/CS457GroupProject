@@ -175,7 +175,44 @@ if($input{'user'} eq "staff") # Staff maintaining.
                                        left: 0px;
 				    z-index: 1000;
                                  } 
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
 
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
 </style>
 </head>
 <body $_[2]>
@@ -327,21 +364,23 @@ $_[6]
 
 
 
-<table width=1300>
-    <tr height=90><td>
+<!--<div width=1300>
+    <div class="shop fixed">-->
+<!--<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+</div>-->
+ENDOFTEXT
 
-    <div class="shop fixed">
-    <table><tr><td>
-        <table width=2200 height=90 border=0 cellspacing=0 cellpadding=0 bgcolor="#AAAAAA">
-	<tr><td width=10></td><td width=160>
-                       <nav id="nav_menu">
+# https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sidenav
 
-			<ul>
-			   <li>
-               <span class="material-icons" style="font-size:40px;">menu</span>
-               <!--<img width=40 height=40 src="$opimageprefix/allcity/allshop/common/menu.jpg">-->
-			   <ul><br>
-				   <li>
+print<<ENDOFTEXT;
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
 ENDOFTEXT
  
         if("$input{'user'}" eq "staff") 
@@ -356,14 +395,6 @@ print "<a href=\"b0home.pl?country=$input{'country'}&classify=all&language=$inpu
         {
         print "<a href=\"b0home.pl?country=$input{'country'}&city=$input{'city'}&shop=$input{'shop'}&classify=all&language=$input{'language'}\" class=\"Button\"> $lang{'Home'} </a>";
         }   
-
-  
-  
-  
-print<<ENDOFTEXT;  
-                                   </li><br>
-				   <li>
-ENDOFTEXT
 
  if($input{'user'} eq "staff")
      {
@@ -381,13 +412,9 @@ print <<ENDOFTEXT;
 ENDOFTEXT
       }
 
-print<<ENDOFTEXT;  
-                                   </li><br>
-ENDOFTEXT
-
 if($input{'user'} ne "staff")
 {
-print "<li><a href=\"b0invoice.pl?country=$input{'country'}&city=$input{'city'}&shop=$input{'shop'}&classify=$input{'classify'}&cart=$input{'cart'}&language=$input{'language'}\" class=\"Button\"> $lang{'Invoice'} </a></li><br>";
+print "<a href=\"b0invoice.pl?country=$input{'country'}&city=$input{'city'}&shop=$input{'shop'}&classify=$input{'classify'}&cart=$input{'cart'}&language=$input{'language'}\" class=\"Button\"> $lang{'Invoice'} </a>";
 
 }
 
@@ -395,7 +422,7 @@ if($input{'user'} eq "staff")
 {
 
 
-      print "<li><a  href=\"b0choose.pl?country=$input{'country'}&city=$input{'city'}&shop=$input{'shop'}&classify=$input{'classify'}&category=$input{'category'}&cart=$input{'cart'}&language=$input{'language'}&user=staff&dllogin=$input{'dllogin'}&dlpasswordenc=$dlpasswordencp&action=b0insert.pl\" class=\"Button\"> $lang{'Place an Item'} </a></li><br>"; 
+      print "<a  href=\"b0choose.pl?country=$input{'country'}&city=$input{'city'}&shop=$input{'shop'}&classify=$input{'classify'}&category=$input{'category'}&cart=$input{'cart'}&language=$input{'language'}&user=staff&dllogin=$input{'dllogin'}&dlpasswordenc=$dlpasswordencp&action=b0insert.pl\" class=\"Button\"> $lang{'Place an Item'} </a>"; 
 
 
 }
@@ -403,26 +430,6 @@ if($input{'user'} eq "staff")
 =begin comment
 # Use search first to update, do not need update.
 
-if($indexsel eq "update") {
-         print "<tr>\n";
-         print "<td height=26 background=\"$opimageprefix/allcity/allshop/common/buttonred.jpg\">";
-}
-else 
-{
-        print "<tr>\n";
-        print "<td height=26 background=\"$opimageprefix/allcity/allshop/common/buttonblack.jpg\">";
-
-}
-
-
-
-if($indexsel eq "update") 
-        {print "<a href=\"b1update.pl?country=$input{'country'}&city=$input{'city'}&shop=$input{'shop'}&classify=$input{'classify'}&viewer=$input{'viewer'}&language=$input{'language'}&logad=$_[1]&lograndom=$_[2]&action=logout\" class=\"Button\"><center>$lang{'Update/Delete Ads'}</center></a>\n";}
-         else {print "<a href=\"a0update.pl?country=$input{'country'}&city=$input{'city'}&shop=$inpt{'shop'}&classify=$input{'classify'}&viewer=$input{'viewer'}&language=$input{'language'}\" class=\"Button\"><center> $lang{'Update/Delete Ads'}</center></a>\n"; }
-
-print<<ENDOFTEXT;
-             </td></tr>
-ENDOFTEXT
 
 =end comment
 =cut
@@ -432,38 +439,57 @@ if($input{'user'} eq "staff")
       $dlpasswordenc=$input{'dlpasswordenc'};
       $dlpasswordenc =~ s/ /+/g;
      
-      print "<li><a  href=\"b1dlinvoice.pl?country=$input{'country'}&city=$input{'city'}&shop=$input{'shop'}&classify=$input{'classify'}&category=$input{'category'}&cart=$input{'cart'}&language=$input{'language'}&user=staff&dllogin=$input{'dllogin'}&dlpasswordenc=$dlpasswordencp\" class=\"Button\">";
+      print "<a  href=\"b1dlinvoice.pl?country=$input{'country'}&city=$input{'city'}&shop=$input{'shop'}&classify=$input{'classify'}&category=$input{'category'}&cart=$input{'cart'}&language=$input{'language'}&user=staff&dllogin=$input{'dllogin'}&dlpasswordenc=$dlpasswordencp\" class=\"Button\">";
 
-     print "$lang{'Invoice'}</center></a></li><br>"; 
+     print "$lang{'Invoice'}</center></a>"; 
 
 
-      print "<li><a  href=\"b1access.pl?country=$input{'country'}&city=$input{'city'}&shop=$input{'shop'}&user=$input{'user'}&language=$input{'language'}&dllogin=$input{'dllogin'}&dlpasswordenc=$dlpasswordenc&access=download\" class=\"Button\">";
+      print "<a  href=\"b1access.pl?country=$input{'country'}&city=$input{'city'}&shop=$input{'shop'}&user=$input{'user'}&language=$input{'language'}&dllogin=$input{'dllogin'}&dlpasswordenc=$dlpasswordenc&access=download\" class=\"Button\">";
 
-     print "$lang{'Access Number File'}</center></a></li><br>"; 
+     print "$lang{'Access Number File'}</center>"; 
 
      
-      print "<li><a  href=\"b0dlmaintain.pl?country=$input{'country'}&city=$input{'city'}&shop=$input{'shop'}&classify=$input{'classify'}&category=$input{'category'}&cart=$input{'cart'}&language=$input{'language'}&user=staff&dllogin=$input{'dllogin'}&dlpasswordenc=$dlpasswordencp\" class=\"Button\">";
+      print "<a  href=\"b0dlmaintain.pl?country=$input{'country'}&city=$input{'city'}&shop=$input{'shop'}&classify=$input{'classify'}&category=$input{'category'}&cart=$input{'cart'}&language=$input{'language'}&user=staff&dllogin=$input{'dllogin'}&dlpasswordenc=$dlpasswordencp\" class=\"Button\">";
 
-     print "$lang{'Maintain Account'}</center></a></li><br>"; 
+     print "$lang{'Maintain Account'}</center></a>"; 
 
 }
 
 
 print<<ENDOFTEXT;
+<a href="#"> Contact Us &nbsp; &nbsp; &nbsp; &nbsp;</a>
+</div>
+ENDOFTEXT
 
-<li>Contact Us &nbsp; &nbsp; &nbsp; &nbsp;</li><br>
-			      </ul>
+print<<ENDOFTEXT;
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "300px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+        <div width=2200 height=90 border=0 cellspacing=0 cellpadding=0>
+        <div class="row" style="background-color:#AAAAAA;">
+            <nav class="col-1" id="nav_menu">
+			<ul>
+			   <li>
+               <span class="material-icons" style="font-size:40px;cursor:pointer" onclick="openNav()">menu</span>
+ENDOFTEXT
+
+print<<ENDOFTEXT;
 			   </li>
 		        </ul>
-                  </nav>			
-	  </td><!--<td width=300>-->
+                  </nav>
 ENDOFTEXT
 
     if($_[0] eq "b1search.pl")
     {
 print <<ENDOFTEXT;    
-            <table><tr><td><font color=white size=3> $lang{'Sort by:'}</font></td><tf></td>
-<tr><td>
+<div class="col-5">
+            <font color=white size=3> $lang{'Sort by:'}</font>
 
 
 
@@ -520,9 +546,8 @@ $value=$categoryarrayattri{"$input{'classify'}"}{"$input{'category'}"}[$i];
 }
 }
 print<<ENDOFTEXT;
-</select></td>
-<td> <input type="button" onClick="SearchSubmit('1', 'yes')"  value="$lang{'View Selected'}"> </td></tr>
-<tr><td> 
+</select>
+<input type="button" onClick="SearchSubmit('1', 'yes')"  value="$lang{'View Selected'}">
 <select name=sortorder onChange="SortBy()" $select_class>
 ENDOFTEXT
 if($input{'sortorder'} eq "descend") 
@@ -531,52 +556,11 @@ else
  { print "<option value=ascend selected>$lang{'Ascend'}</option>\n<option value=descend>$lang{'Descend'}</option>\n";}
 
 print <<ENDOFTEXT;
-</select></td>
-<td><input type="button" onClick="Unselect()" value="$lang{'Unselect'}">
-</td></tr>
-            </table>
-ENDOFTEXT
-
-    }
-
-    print <<ENDOFTEXT;
-</td>
-<td width=500>
-            <table>
-                 <tr><td width=55></td>
-                     <td align=left width=300>
-                <table>
-ENDOFTEXT
-
-                for($i=0; $i<=$#{$categoryarray{"$input{'classify'}"}}; $i++)
-		{
-		    if($input{'category'} eq $categoryarray{"$input{'classify'}"}[$i])
-	            {
-		         $categorydisplay=$categoryarrayname{"$input{'classify'}"}[$i];	    
-                    }
-		}
-		print <<ENDOFTEXT;
-                         <tr height=25 valign=bottom><td>
-                         <div id=categorydisplay style="color:white;">
-                            &nbsp;
-                            <font size=2>
-                                $categorydisplay
-                            </font>
-                         </div>            </td></tr>
-		         <tr valign=bottom><td>
-                 <div class="row">
-    <input class="col-8" name=search value="$input{'search'}" placeholder="Search . . ." aria-label="Search">
-    <button class="col-4 btn btn-outline-success my-2 my-sm-0" type="button" onClick="window.location.href='b1search.pl?country='+document.$_[7].country.value+'&city='+document.$_[7].city.value+'&shop='+document.$_[7].shop.value+'&user='+document.$_[7].user.value+'&dllogin='+document.$_[7].dllogin.value+'&dlpasswordenc='+document.$_[7].dlpasswordenc.value+'&classify='+document.$_[7].classify.value+'&category='+document.$_[7].category.value+'&cart='+document.$_[7].cart.value+'&language='+document.$_[7].language.value+'&topleft='+document.$_[7].topleft.value+'&page=1&sortby=postdate&sortorder=descend&browser='+document.$_[7].browser.value+'&browsere='+document.$_[7].browsere.value">
-        <span class="material-icons">search</span>
-        <span>$lang{'Search'}</span>
-    </button>
-  </div>
-</td></tr>
-                </table></td>
-                     <td>
-                <table>
-                     <tr><td>
-		     <nav id="nav_menu1">
+</select>
+<input type="button" onClick="Unselect()" value="$lang{'Unselect'}">
+</div>
+  <div class="col-3">
+		     <nav id="nav_menu1" style="z=index:100">
 		       <div class="mx-4">
 		        <font color=white size=2><span class="material-icons">category</span>&nbsp;Category</font>
                         <ul>
@@ -633,37 +617,14 @@ ENDOFTEXT
 	  print<<ENDOFTEXT; 
 		        </ul>
 			</div>
-                      </nav>	
-                     </td></tr>
-                     <tr><td>
+                      </nav>
+                      </div>
 ENDOFTEXT
-	  
-#	  <input type="button" value="$lang{'Search'}" onClick="window.location.href='b1search.pl?country='+document.$_[7].country.value+'&city='+document.$_[7].city.value+'&shop='+document.$_[7].shop.value+'&user='+document.$_[7].user.value+'&dllogin='+document.$_[7].dllogin.value+'&dlpasswordenc='+document.$_[7].dlpasswordenc.value+'&classify='+document.$_[7].classify.value+'&category='+document.$_[7].category.value+'&cart='+document.$_[7].cart.value+'&language='+document.$_[7].language.value+'&topleft='+document.$_[7].topleft.value+'&page='+document.$_[7].page.value+'&sortby='+document.$_[7].sortby.value+'&sortorder='+document.$_[7].sortorder.value+'&browser='+document.$_[7].browser.value+'&browsere='+document.$_[7].browsere.value">
-         
-	  print <<ENDOFTEXT;
-	  </td></tr>
-                </table>
-		     </td></tr>
-            </table></td>
-	    <td width=100>
-ENDOFTEXT
-	  if($input{'user'} ne "staff")
-	  {
-		  print <<ENDOFTEXT;
-&nbsp; &nbsp;<font color=white> $lang{'Access:'}</font> <br>&nbsp; &nbsp;<input name=access size=5> <br>&nbsp; &nbsp;<button type=button class="btn btn-outline-dark" onClick="window.location.href='b1access.pl?country=$input{'country'}&city=$input{'city'}&shop=$input{'shop'}&language=$input{'language'}&browser=$input{'browser'}&browsere=$input{'browsere'}&access='+document.$_[7].access.value"><span class="material-icons">trending_flat</span>&nbsp;$lang{'Find item'}</button>
-ENDOFTEXT
-          }
-	  elsif($input{'user'} eq "staff")
-	  {
-		  print <<ENDOFTEXT;
-&nbsp; &nbsp;<font color=white> $lang{'Access:'}</font> <br>&nbsp; &nbsp;<input name=access size=5> <br>&nbsp; &nbsp;<button type=button class="btn btn-outline-dark" onClick="window.location.href='b1access.pl?country=$input{'country'}&city=$input{'city'}&shop=$input{'shop'}&user=$input{'user'}&language=$input{'language'}&dllogin=$input{'dllogin'}&dlpasswordenc=$dlpasswordenc&browser=$input{'browser'}&browsere=$input{'browsere'}&access='+document.$_[7].access.value"><span class="material-icons">trending_flat</span>&nbsp;$lang{'Find item'}</button>
-ENDOFTEXT
-          }
 
-	 print<<ENDOFTEXT;
-</td>	    
-<td>
+print <<ENDOFTEXT;
+     <div class="col-3">
 ENDOFTEXT
+
 	  if($input{'user'} ne "staff")
 	  {
 		  print <<ENDOFTEXT;
@@ -671,24 +632,71 @@ ENDOFTEXT
 <button type="button" class="btn btn-outline-dark" onClick="window.location.href='b1cart.pl?country=$input{'country'}&city=$input{'city'}&shop=$input{'shop'}&language=$input{'language'}&browser=$input{'browser'}&browsere=$input{'browsere'}&cart='+document.$_[7].cart.value">
     <span class="material-icons">shopping_cart</span>
     <span>$lang{'Shopping Cart'}</span>
-</botton>
+</button>
 ENDOFTEXT
           }
  
      print <<ENDOFTEXT;
-</td>
-</tr>
-        </table></td></tr>
-    <tr><td>
-        <table width=2200 bgcolor=#c4ff0e border=0 cellspacing=0 cellsep=0>
-    <tr><td width=990><div id=ClassifyCategory></div></td><td width=10></td><td width=1200><div id=pageoutput></div></td></tr>
-        </table>
-    </td></tr>
-    </table>
-    </div>	
-</td></tr>
-<tr>
-<td>
+     </div>
+<div class="col-2">&nbsp;</div>
+ENDOFTEXT
+
+    }
+
+                for($i=0; $i<=$#{$categoryarray{"$input{'classify'}"}}; $i++)
+		{
+		    if($input{'category'} eq $categoryarray{"$input{'classify'}"}[$i])
+	            {
+		         $categorydisplay=$categoryarrayname{"$input{'classify'}"}[$i];	    
+                    }
+		}
+		print <<ENDOFTEXT;
+                         <div class="col-4">
+                 <div class="row pb-4">
+    <div class="col-12" id=categorydisplay style="color:white;">
+        &nbsp;
+        <font size=2>
+            $categorydisplay
+        </font>
+    </div>
+    <input class="col-8" name=search value="$input{'search'}" placeholder="Search . . ." aria-label="Search">
+    <button class="col-4 btn btn-outline-success my-2 my-sm-0" type="button" onClick="window.location.href='b1search.pl?country='+document.$_[7].country.value+'&city='+document.$_[7].city.value+'&shop='+document.$_[7].shop.value+'&user='+document.$_[7].user.value+'&dllogin='+document.$_[7].dllogin.value+'&dlpasswordenc='+document.$_[7].dlpasswordenc.value+'&classify='+document.$_[7].classify.value+'&category='+document.$_[7].category.value+'&cart='+document.$_[7].cart.value+'&language='+document.$_[7].language.value+'&topleft='+document.$_[7].topleft.value+'&page=1&sortby=postdate&sortorder=descend&browser='+document.$_[7].browser.value+'&browsere='+document.$_[7].browsere.value">
+        <span class="material-icons">search</span>
+        <span>$lang{'Search'}</span>
+    </button>
+  </div>
+  </div>
+ENDOFTEXT
+
+    print<<ENDOFTEXT;
+                      <div class="col-3"></div><div class="col-3">
+ENDOFTEXT
+	  
+#	  <input type="button" value="$lang{'Search'}" onClick="window.location.href='b1search.pl?country='+document.$_[7].country.value+'&city='+document.$_[7].city.value+'&shop='+document.$_[7].shop.value+'&user='+document.$_[7].user.value+'&dllogin='+document.$_[7].dllogin.value+'&dlpasswordenc='+document.$_[7].dlpasswordenc.value+'&classify='+document.$_[7].classify.value+'&category='+document.$_[7].category.value+'&cart='+document.$_[7].cart.value+'&language='+document.$_[7].language.value+'&topleft='+document.$_[7].topleft.value+'&page='+document.$_[7].page.value+'&sortby='+document.$_[7].sortby.value+'&sortorder='+document.$_[7].sortorder.value+'&browser='+document.$_[7].browser.value+'&browsere='+document.$_[7].browsere.value">
+
+	  if($input{'user'} ne "staff")
+	  {
+		  print <<ENDOFTEXT;
+&nbsp;&nbsp;<font color=white>$lang{'Access:'}</font>&nbsp;&nbsp;<input name=access size=5>&nbsp;&nbsp;<button type=button class="btn btn-outline-dark" onClick="window.location.href='b1access.pl?country=$input{'country'}&city=$input{'city'}&shop=$input{'shop'}&language=$input{'language'}&browser=$input{'browser'}&browsere=$input{'browsere'}&access='+document.$_[7].access.value"><span class="material-icons">trending_flat</span>&nbsp;$lang{'Find item'}</button>
+ENDOFTEXT
+          }
+	  elsif($input{'user'} eq "staff")
+	  {
+		  print <<ENDOFTEXT;
+&nbsp;&nbsp;<font color=white>$lang{'Access:'}</font>&nbsp;&nbsp;<input name=access size=5>&nbsp;&nbsp;<button type=button class="btn btn-outline-dark" onClick="window.location.href='b1access.pl?country=$input{'country'}&city=$input{'city'}&shop=$input{'shop'}&user=$input{'user'}&language=$input{'language'}&dllogin=$input{'dllogin'}&dlpasswordenc=$dlpasswordenc&browser=$input{'browser'}&browsere=$input{'browsere'}&access='+document.$_[7].access.value"><span class="material-icons">trending_flat</span>&nbsp;$lang{'Find item'}</button>
+ENDOFTEXT
+          }
+
+	 print<<ENDOFTEXT;
+     </div>
+ENDOFTEXT
+     print <<ENDOFTEXT;
+        <div width=2200 bgcolor=#c4ff0e border=0 cellspacing=0 cellsep=0>
+<div id=ClassifyCategory></div></div>
+        </div>
+        </div>
+    <!--</div>
+    </div>-->
 
 <script language="JavaScript">
 <!--

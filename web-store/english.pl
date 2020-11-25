@@ -407,7 +407,7 @@ $langindexkey=
 #
 LangMeta#<meta http-equiv='content-type' content='text/html; charset=utf-8'>
 #
-Shopping Cart#Shopping Cart#
+Shopping Cart#Cart#
 Shopping Cart:#Shopping Cart:#
 Item Title#Item Title#
 Stock Number#Stock Number#

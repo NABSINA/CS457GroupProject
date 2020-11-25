@@ -126,30 +126,66 @@ class Main {
         act(releaseKey, KeyEvent.VK_CONTROL);
     }
 
+    private String getBtnClickJS(String selctor) {
+        return "(() => {"
+            + "\n\tconst btnUploadTagPicture = document.querySelector('[" + selctor + "]');"
+            + "\n\t(btnUploadTagPicture ? btnUploadTagPicture.click() : undefined);"
+            + "\n})();";
+    }
+
+    private void runJS(String jsCode) {
+        act(pause, 2000L);
+        System.out.println(jsCode);
+        copy(jsCode);
+        paste();
+        act(typeKey, KeyEvent.VK_ENTER);
+    }
+
     public Main() throws Exception {
         System.out.println("Starting!");
         act(pause, 5000L);
-
+        String placeItemURL = "http://134.193.19.25/server/market/cgi-bin/b0choose.pl?country=usa&city=kc&shop=store15&classify=accessories&category=cables&cart=&language=english&user=staff&dllogin=store15&dlpasswordenc=!0+1+82312+49908+13121+7828+99017+53180+53638+40635+53153+11804+0+1+16628+43227+4246+64536+35965+70956+2266+30531+93441+78402+!&action=b0insert.pl";
         Map<String, ArrayList<Product>> productsMap = getProducts();
         System.out.println("----");
         act(typeKey, KeyEvent.VK_F12);
+        int itemCount = 0;
         for (String key : productsMap.keySet()) {
-            // System.out.println(key);
-            // System.out.println(productsMap.get(key).toString());
             for (Product product : productsMap.get(key)) {
                 String unformattedString = "window.automatedInsertItem('%s', '%s', '%s', '%s', %s);";
-                String jsFunctionCallString = String.format(unformattedString,
+                String jsSelectCategoryAndFillForm = String.format(unformattedString,
                     String.format("%s/%s", getClassification(key), key), product.name, product.sku, product.brand, product.price + "");
-                // System.out.println(jsFunctionCallString);
-                act(pause, 1000L);
+                act(pause, 2000L);
                 act(typeKey, KeyEvent.VK_F12);
-                act(pause, 1000L);
+                act(pause, 2000L);
                 act(typeKey, KeyEvent.VK_F12);
-                act(pause, 1000L);
-                copy(jsFunctionCallString);
+                for (int i = 0; i < 2; i++) {
+                    runJS(jsSelectCategoryAndFillForm);
+                }
+                for (String uploadBtnValue : new String[] {"Upload Tag Picture", "Upload Pictures"}) {
+                    act(pause, 2000L);
+                    runJS(getBtnClickJS("value=\"" + uploadBtnValue + "\""));
+                    act(pause, 2000L);
+                    act(typeKey, KeyEvent.VK_F12);
+                    runJS(getBtnClickJS("name=\"upfile\""));
+                    act(pause, 2500L);
+                    copy(product.imageURL);
+                    paste();
+                    act(typeKey, KeyEvent.VK_ENTER);
+                    act(pause, 7500L);
+                    runJS(getBtnClickJS("value=\"Upload\""));
+                    act(pause, 500L);
+                    runJS(getBtnClickJS("value=\"OK\""));
+                }
+                for (int i = 0; i < 2; i++) {
+                    act(pause, 500L);
+                    act(typeKey, KeyEvent.VK_F6);
+                }
+                copy(placeItemURL);
                 paste();
                 act(typeKey, KeyEvent.VK_ENTER);
-                break;
+                if (++itemCount >= 2) {
+                    break;
+                }
             }
             break;
         }

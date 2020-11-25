@@ -32,6 +32,7 @@ print <<ENDOFTEXT;
     .title {
         text-shadow: 2px 2px #000000;
         color: white;
+        width: 99vw;
     }
     .fullscreen-bg {
         position: absolute;
@@ -47,7 +48,7 @@ print <<ENDOFTEXT;
         position: absolute;
         top: 0;
         left: 0;
-        height: 100vh;
+        width: 100vw;
     }
 </style>
 <script>
