@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.Toolkit;
 import java.awt.Robot;
@@ -136,6 +137,9 @@ class Main {
     private void runJS(String jsCode) {
         act(pause, 2000L);
         System.out.println(jsCode);
+        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+        act(pause, 100L);
+        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         copy(jsCode);
         paste();
         act(typeKey, KeyEvent.VK_ENTER);
@@ -148,9 +152,19 @@ class Main {
         Map<String, ArrayList<Product>> productsMap = getProducts();
         System.out.println("----");
         act(typeKey, KeyEvent.VK_F12);
-        int itemCount = 0;
+        int categoryCount = 0;
         for (String key : productsMap.keySet()) {
+            categoryCount++;
+            if (categoryCount != 4) {
+                continue;
+            }
+            int itemCount = 0;
             for (Product product : productsMap.get(key)) {
+                itemCount++;
+                // if (itemCount < 8) {
+                //     continue;
+                // }
+                System.out.println("Inserting item: " + itemCount);
                 String unformattedString = "window.automatedInsertItem('%s', '%s', '%s', '%s', %s);";
                 String jsSelectCategoryAndFillForm = String.format(unformattedString,
                     String.format("%s/%s", getClassification(key), key), product.name, product.sku, product.brand, product.price + "");
@@ -183,11 +197,11 @@ class Main {
                 copy(placeItemURL);
                 paste();
                 act(typeKey, KeyEvent.VK_ENTER);
-                if (++itemCount >= 2) {
-                    break;
-                }
+                // if (++itemCount >= 2) {
+                //     break;
+                // }
             }
-            break;
+            // break;
         }
         System.out.println("Finished!");
     }
